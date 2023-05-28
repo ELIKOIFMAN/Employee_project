@@ -64,24 +64,14 @@ class FulltimeEmployee(Employee):
     def get_info(self):
         return print(f"Employee name:{self.name}\nbase salary: {self.salary}\nlocation: {self.location}\ndivision: "
                      f"{self.department}\n")
-    #
-    # def get_total_pay(self, work_time):
-    #     total_pay = self.salary
-    #     if 220 > work_time >= 180:
-    #         total_pay = self.__salary
-    #     elif work_time > 220:
-    #         total_pay *= 1.2
-    #     elif work_time < 180:
-    #         total_pay *= 0.8
-    #     return print(total_pay)
 
 
 class ContractWorker(Employee):
-    def __init__(self, division, name="null", salary=10000):
-        Employee.__init__(self, division, salary=salary, location="USA")
+    def __init__(self, department, name="null", salary=10000):
+        Employee.__init__(self, department, name, salary)
         self.name = name.capitalize()
         self.salary = salary
-        self.division = division
+        self.division = department
 
     def set_raise(self, num):
         self.salary += num
